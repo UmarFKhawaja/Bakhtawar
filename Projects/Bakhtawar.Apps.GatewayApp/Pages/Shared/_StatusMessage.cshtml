@@ -1,0 +1,11 @@
+﻿@{
+    var statusMessage = (string) TempData["StatusMessage"];
+}
+@if (!String.IsNullOrEmpty(statusMessage))
+{
+    var statusMessageClass = statusMessage.StartsWith("Error") ? "danger" : "success";
+    <div class="alert alert-@statusMessageClass alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        @statusMessage
+    </div>
+}

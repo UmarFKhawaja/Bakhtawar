@@ -1,0 +1,10 @@
+{
+    "ASPNETCORE_URLS": "http://localhost:7080",
+    "ASPNETCORE_ConnectionStrings__Bakhtawar": "Server=.;Database=Bakhtawar;User Id=sa;Password=Bakhtawar123",
+    "ASPNETCORE_IdentityServer__Key__Type": "File",
+    "ASPNETCORE_IdentityServer__Key__FilePath": "localhost.pfx",
+    "ASPNETCORE_IdentityServer__Key__Password": "Bakhtawar123",
+    "ASPNETCORE_EmailSender__Folder": "Dump/Emails",
+    "ASPNETCORE_Secret__Google__ClientId": "571139809677-o6idqdli7v28jp5u78pck42kie50golu.apps.googleusercontent.com",
+    "ASPNETCORE_Secret__Google__ClientSecret": "votmm1e6PlyFpjyFxPhDDFfe"
+}

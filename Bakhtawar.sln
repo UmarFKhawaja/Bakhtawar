@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+#
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bakhtawar", "Projects\Bakhtawar\Bakhtawar.csproj", "{E952F749-FBF3-42DB-9964-0C346FC61ACC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bakhtawar.Apps.BackendApp", "Projects\Bakhtawar.Apps.BackendApp\Bakhtawar.Apps.BackendApp.csproj", "{ADF8C4A9-CEE2-4F0E-84BB-5952D61F9C94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bakhtawar.Apps.WebFrontendApp", "Projects\Bakhtawar.Apps.WebFrontendApp\Bakhtawar.Apps.WebFrontendApp.csproj", "{94AFA475-04C5-45C9-8079-F75B53549823}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bakhtawar.Apps.GatewayApp", "Projects\Bakhtawar.Apps.GatewayApp\Bakhtawar.Apps.GatewayApp.csproj", "{376EB802-F6C8-4672-BEC2-445E723BF7C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bakhtawar.Apps.DatabaseApp", "Projects\Bakhtawar.Apps.DatabaseApp\Bakhtawar.Apps.DatabaseApp.csproj", "{69FC285C-ACE5-4008-BD76-0E09B5FA28DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E952F749-FBF3-42DB-9964-0C346FC61ACC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E952F749-FBF3-42DB-9964-0C346FC61ACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E952F749-FBF3-42DB-9964-0C346FC61ACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E952F749-FBF3-42DB-9964-0C346FC61ACC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADF8C4A9-CEE2-4F0E-84BB-5952D61F9C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADF8C4A9-CEE2-4F0E-84BB-5952D61F9C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADF8C4A9-CEE2-4F0E-84BB-5952D61F9C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADF8C4A9-CEE2-4F0E-84BB-5952D61F9C94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94AFA475-04C5-45C9-8079-F75B53549823}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94AFA475-04C5-45C9-8079-F75B53549823}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94AFA475-04C5-45C9-8079-F75B53549823}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94AFA475-04C5-45C9-8079-F75B53549823}.Release|Any CPU.Build.0 = Release|Any CPU
+		{376EB802-F6C8-4672-BEC2-445E723BF7C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{376EB802-F6C8-4672-BEC2-445E723BF7C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{376EB802-F6C8-4672-BEC2-445E723BF7C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{376EB802-F6C8-4672-BEC2-445E723BF7C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69FC285C-ACE5-4008-BD76-0E09B5FA28DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69FC285C-ACE5-4008-BD76-0E09B5FA28DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69FC285C-ACE5-4008-BD76-0E09B5FA28DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69FC285C-ACE5-4008-BD76-0E09B5FA28DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+EndGlobal

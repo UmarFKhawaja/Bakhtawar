@@ -1,0 +1,7 @@
+{
+    "ASPNETCORE_URLS": "https://localhost:8443",
+    "ASPNETCORE_ConnectionStrings__Bakhtawar": "Server=.;Database=Bakhtawar;User Id=sa;Password=Bakhtawar123",
+    "ASPNETCORE_ForwardedHeadersOptions__KnownNetworks": "",
+    "ASPNETCORE_OIDC__Authority": "https://localhost:7443",
+    "ASPNETCORE_OIDC__ClientId": "bakhtawar.web"
+}

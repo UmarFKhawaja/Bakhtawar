@@ -1,0 +1,23 @@
+﻿{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "Bakhtawar.Apps.GatewayApp": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation",
+        "ASPNETCORE_URLS": "http://localhost:7080;https://localhost:7443",
+        "ASPNETCORE_Kestrel__Certificates__Default__Path": "../../Keys/localhost.pfx",
+        "ASPNETCORE_Kestrel__Certificates__Default__Password": "Bakhtawar123",
+        "ASPNETCORE_IdentityServer__Key__Type": "File",
+        "ASPNETCORE_IdentityServer__Key__FilePath": "../../Keys/localhost.pfx",
+        "ASPNETCORE_IdentityServer__Key__Password": "Bakhtawar123",
+        "ASPNETCORE_EmailSender__Folder": "../../Dump/Emails",
+        "ASPNETCORE_Secret__Google__ClientId": "571139809677-o6idqdli7v28jp5u78pck42kie50golu.apps.googleusercontent.com",
+        "ASPNETCORE_Secret__Google__ClientSecret": "votmm1e6PlyFpjyFxPhDDFfe"
+      }
+    }
+  }
+}

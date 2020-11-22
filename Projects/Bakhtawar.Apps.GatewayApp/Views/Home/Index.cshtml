@@ -1,0 +1,15 @@
+@using System.Diagnostics
+@{
+    var version = FileVersionInfo.GetVersionInfo(typeof(IdentityServer4.Hosting.IdentityServerMiddleware).Assembly.Location).ProductVersion.Split('+').First();
+}
+<div class="welcome-page">
+    <h3 class="text-muted">Powered by</h3>
+    <h1>
+        <a href="https://identityserver.io" class="text-decoration-none" target="_blank">
+            <img src="~/icon.jpg" alt="IdentityServer4"/>
+            <span class="text-dark">IdentityServer4</span>
+        </a>
+    </h1>
+    <h5><text>v</text>@version</h5>
+    <p><a href="~/.well-known/openid-configuration" class="text-muted">OIDC Configuration</a></p>
+</div>

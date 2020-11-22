@@ -1,0 +1,19 @@
+﻿{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "Bakhtawar.Apps.WebFrontendApp": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "http://localhost:8080;https://localhost:8443",
+        "ASPNETCORE_ForwardedHeadersOptions__KnownNetworks": "",
+        "ASPNETCORE_Kestrel__Certificates__Default__Path": "../../Keys/localhost.pfx",
+        "ASPNETCORE_Kestrel__Certificates__Default__Password": "Bakhtawar123",
+        "ASPNETCORE_OIDC__Authority": "https://localhost:7443",
+        "ASPNETCORE_OIDC__ClientId": "bakhtawar.web"
+      }
+    }
+  }
+}

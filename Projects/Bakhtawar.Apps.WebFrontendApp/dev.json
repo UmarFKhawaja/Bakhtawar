@@ -1,0 +1,4 @@
+{
+  "OIDC:ClientSecret": "ca39181f-12ce-4a44-a4fd-0955b39c4953",
+  "ConnectionStrings:Bakhtawar": "User ID=bakhtawar;Password=Bakhtawar123;Host=localhost;Port=5432;Database=bakhtawar;"
+}

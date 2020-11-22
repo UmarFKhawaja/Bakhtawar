@@ -1,0 +1,80 @@
+@using Bakhtawar.Apps.GatewayApp.Models.Account
+@model Bakhtawar.Apps.GatewayApp.ViewModels.Account.RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+
+    var returnUrl = (string)ViewData["returnUrl"];
+    var visibleExternalProviders = (IEnumerable<ExternalProvider>)ViewData["visibleExternalProviders"];
+}
+
+<partial name="_StatusMessage" />
+
+<div class="register-page">
+    <div class="lead">
+        <h1>Register</h1>
+        <p>Choose how to register</p>
+    </div>
+
+    <partial name="_ValidationSummary" />
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Use a local account</h2>
+                </div>
+
+                <div class="card-body">
+                    <form asp-route-returnUrl="@returnUrl" method="post">
+                        <div class="form-group">
+                            <label asp-for="@Model.Email"></label>
+                            <input asp-for="@Model.Email" class="form-control" />
+                            <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="@Model.Password"></label>
+                            <input asp-for="@Model.Password" class="form-control" />
+                            <span asp-validation-for="@Model.Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="@Model.ConfirmPassword"></label>
+                            <input asp-for="@Model.ConfirmPassword" class="form-control" />
+                            <span asp-validation-for="@Model.ConfirmPassword" class="text-danger"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        @if (visibleExternalProviders.Any())
+        {
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Use a social account</h2>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-inline">
+                            @foreach (var provider in visibleExternalProviders)
+                            {
+                                <li class="list-inline-item">
+                                    <a class="btn btn-secondary"
+                                       asp-controller="External"
+                                       asp-action="Challenge"
+                                       asp-route-scheme="@provider.AuthenticationScheme"
+                                       asp-route-returnUrl="@returnUrl"
+                                       title="Login using your @provider.DisplayName account">
+                                        @provider.DisplayName
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@section scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
