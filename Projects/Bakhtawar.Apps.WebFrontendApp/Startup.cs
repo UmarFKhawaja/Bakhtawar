@@ -5,14 +5,10 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Bakhtawar.Data;
-using Bakhtawar.Models;
 using Bakhtawar.Services;
 using IdentityModel;
-using IdentityModel.Client;
-using IdentityServer4;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
@@ -22,7 +18,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.IdentityModel.Tokens;
 
 namespace Bakhtawar.Apps.WebFrontendApp
 {
@@ -51,9 +46,6 @@ namespace Bakhtawar.Apps.WebFrontendApp
                 (
                     (options) => { options.UseNpgsql(Configuration["ConnectionStrings:Bakhtawar"]); }
                 );
-
-            services
-                .AddDataProtection();
 
             // services
             //     .AddHttpClient();

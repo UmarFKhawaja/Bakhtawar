@@ -127,8 +127,7 @@ namespace Bakhtawar.Apps.GatewayApp
 
             services
                 .AddDataProtection()
-                .PersistKeysToDbContext<KeysDbContext>()
-                .ProtectKeysWithCertificate("");
+                .PersistKeysToDbContext<KeysDbContext>();
 
             services
                 .AddAuthentication()
