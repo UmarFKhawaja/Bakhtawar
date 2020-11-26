@@ -10,6 +10,7 @@ using IdentityModel;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
@@ -46,6 +47,11 @@ namespace Bakhtawar.Apps.WebFrontendApp
                 (
                     (options) => { options.UseNpgsql(Configuration["ConnectionStrings:Bakhtawar"]); }
                 );
+
+            services
+                .AddDataProtection()
+                .PersistKeysToDbContext<KeysDbContext>()
+                .SetApplicationName(Configuration["Application:Name"]);
 
             // services
             //     .AddHttpClient();

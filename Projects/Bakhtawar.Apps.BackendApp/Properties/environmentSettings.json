@@ -1,5 +1,6 @@
 {
     "ASPNETCORE_URLS": "http://localhost:9080",
+    "ASPNETCORE_Application__Name": "Bakhtawar",
     "ASPNETCORE_ConnectionStrings__Bakhtawar": "Server=.;Database=Bakhtawar;User Id=sa;Password=Bakhtawar123",
     "ASPNETCORE_ForwardedHeadersOptions__KnownNetworks": "",
     "ASPNETCORE_Cors__Origins": "https://bakhtawar.co.uk",

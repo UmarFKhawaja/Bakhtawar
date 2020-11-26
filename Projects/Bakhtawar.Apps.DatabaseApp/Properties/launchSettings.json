@@ -5,6 +5,7 @@
       "commandName": "Project",
       "environmentVariables": {
         "DOTNET_ENVIRONMENT": "Development",
+        "DOTNET_Application__Name": "Bakhtawar",
         "DOTNET_OIDC__Authority": "https://localhost:7443",
         "DOTNET_OIDC__Callback": "https://localhost:8443"
       }
