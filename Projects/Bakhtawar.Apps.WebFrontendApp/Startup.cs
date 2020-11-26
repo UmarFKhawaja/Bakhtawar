@@ -30,9 +30,9 @@ namespace Bakhtawar.Apps.WebFrontendApp
             Environment = environment;
         }
 
-        public IConfiguration Configuration { get; }
+        private IConfiguration Configuration { get; }
 
-        public IWebHostEnvironment Environment { get; }
+        private IWebHostEnvironment Environment { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
