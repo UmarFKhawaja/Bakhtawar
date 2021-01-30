@@ -53,20 +53,6 @@ namespace Bakhtawar.Apps.WebFrontendApp
                 .PersistKeysToDbContext<KeysDbContext>()
                 .SetApplicationName(Configuration["Application:Name"]);
 
-            // services
-            //     .AddHttpClient();
-
-            // services
-            //     .AddSingleton<IDiscoveryCache>
-            //     (
-            //         (serviceProvider) =>
-            //         {
-            //             var httpClientFactory = serviceProvider.GetRequiredService<IHttpClientFactory>();
-            //             
-            //             return new DiscoveryCache(Configuration["OIDC:Authority"], () => httpClientFactory.CreateClient());
-            //         }
-            //     );
-
             services
                 .AddAuthentication
                 (
@@ -82,12 +68,12 @@ namespace Bakhtawar.Apps.WebFrontendApp
                     "oidc",
                     (options) =>
                     {
-                        options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                         options.Authority = Configuration["OIDC:Authority"];
 
                         options.ClientId = Configuration["OIDC:ClientId"];
                         // options.ClientSecret = Configuration["OIDC:ClientSecret"];
 
+                        options.SignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                         options.ResponseType = OidcConstants.ResponseTypes.Code;
                         options.ResponseMode = OidcConstants.ResponseModes.Query;
                         options.UsePkce = true;
@@ -95,12 +81,10 @@ namespace Bakhtawar.Apps.WebFrontendApp
                         options.Scope.Add("openid");
                         options.Scope.Add("profile");
                         options.Scope.Add("email");
-                        options.Scope.Add("offline_access");
-                        options.Scope.Add("api");
-                        // options.Scope.Add("bakhtawar.users");
-                        // options.Scope.Add("bakhtawar.galleries");
-                        // options.Scope.Add("bakhtawar.posts");
-                        // options.Scope.Add("bakhtawar.comments");
+                        options.Scope.Add("bakhtawar.users");
+                        options.Scope.Add("bakhtawar.galleries");
+                        options.Scope.Add("bakhtawar.posts");
+                        options.Scope.Add("bakhtawar.comments");
                         
                         options.RequireHttpsMetadata = true;
 
@@ -116,6 +100,7 @@ namespace Bakhtawar.Apps.WebFrontendApp
                         options.Conventions.Add(new RouteTokenTransformerConvention(new SlugifyParameterTransformer()));
                     }
                 );
+
             services
                 .AddRazorPages();
 
@@ -160,7 +145,6 @@ namespace Bakhtawar.Apps.WebFrontendApp
             if (Environment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
             }
             else
             {

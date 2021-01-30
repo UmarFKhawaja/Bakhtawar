@@ -151,13 +151,6 @@ namespace Bakhtawar.Apps.GatewayApp
                                 options.ClientSecret = Configuration["Secret:Google:ClientSecret"];
                             }
                         )
-                )
-                .AddLocalApi
-                (
-                    (options) =>
-                    {
-                        options.ExpectedScope = "api";
-                    }
                 );
 
             services
@@ -235,7 +228,6 @@ namespace Bakhtawar.Apps.GatewayApp
             if (Environment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseDatabaseErrorPage();
             }
             else
             {
