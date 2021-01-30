@@ -28,7 +28,7 @@ namespace Bakhtawar.Apps.DatabaseApp
             await dataSeeder.SeedDataAsync(configuration);
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
+        private static IHostBuilder CreateHostBuilder(string[] args) =>
             Host
                 .CreateDefaultBuilder(args)
                 .ConfigureServices(ConfigureServices);
