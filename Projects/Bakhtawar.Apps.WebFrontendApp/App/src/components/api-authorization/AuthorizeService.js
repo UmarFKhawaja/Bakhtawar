@@ -226,7 +226,6 @@ export class AuthorizeService {
 
         let settings = await response.json();
 
-        settings.redirect_uri = ApplicationRoot;
         settings.automaticSilentRenew = true;
         settings.includeIdTokenInSilentRenew = true;
         settings.userStore = new WebStorageStateStore({

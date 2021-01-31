@@ -1,5 +1,4 @@
 export const ApplicationName = 'Bakhtawar';
-export const ApplicationRoot = 'https://localhost:8443'; 
 
 export const ConfigurationName = 'bakhtawar.web';
 

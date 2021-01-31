@@ -101,11 +101,11 @@ namespace Bakhtawar.Data
                     AllowedGrantTypes = GrantTypes.Code,
                     RedirectUris =
                     {
-                        $"{configuration["OIDC:Callback"]}"
+                        $"{configuration["OIDC:Callback"]}/authentication/login-callback"
                     },
                     PostLogoutRedirectUris =
                     {
-                        $"{configuration["OIDC:Callback"]}/signout-callback-oidc"
+                        $"{configuration["OIDC:Callback"]}/authentication/logout-callback"
                     },
                     AllowedScopes = AllScopes,
                     AllowOfflineAccess = true,
