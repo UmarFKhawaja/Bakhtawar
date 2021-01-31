@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Route } from 'react-router';
 import { Login } from './Login'
 import { Logout } from './Logout'
-import { ApplicationPaths, LoginActions, LogoutActions } from './ApiAuthorizationConstants';
+import { ApplicationPaths, LoginActions, LogoutActions } from '../../constants/Authorization';
 
 export default class ApiAuthorizationRoutes extends Component {
 

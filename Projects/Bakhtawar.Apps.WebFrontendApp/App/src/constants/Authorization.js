@@ -21,7 +21,7 @@ export const LoginActions = {
   Register: 'register'
 };
 
-const gateway = 'https://localhost:7443'; 
+const gateway = 'https://localhost:7443';
 
 const prefix = '/authentication';
 

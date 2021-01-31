@@ -1,63 +1,65 @@
-import React, { Component } from 'react';
-import authService from './api-authorization/AuthorizeService'
+import React, { useEffect, useState } from 'react';
+import { authorizationManager } from '../services/authorization-manager';
+import { prefixHolder } from '../services/prefix-holder';
 
-export class FetchData extends Component {
-  static displayName = FetchData.name;
-
-  constructor(props) {
-    super(props);
-    this.state = { forecasts: [], loading: true };
-  }
-
-  componentDidMount() {
-    this.populateWeatherData();
-  }
-
-  static renderForecastsTable(forecasts) {
-    return (
-      <table className='table table-striped' aria-labelledby="tabelLabel">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Temp. (C)</th>
-            <th>Temp. (F)</th>
-            <th>Summary</th>
+const ForecastsTable = ({ forecasts }) => {
+  return (
+    <table className='table table-striped'>
+      <thead>
+      <tr>
+        <th>Date</th>
+        <th>Temp. (C)</th>
+        <th>Temp. (F)</th>
+        <th>Summary</th>
+      </tr>
+      </thead>
+      <tbody>
+      {
+        forecasts.map((forecast) =>
+          <tr key={forecast.date}>
+            <td>{forecast.date}</td>
+            <td>{forecast.temperatureC}</td>
+            <td>{forecast.temperatureF}</td>
+            <td>{forecast.summary}</td>
           </tr>
-        </thead>
-        <tbody>
-          {forecasts.map(forecast =>
-            <tr key={forecast.date}>
-              <td>{forecast.date}</td>
-              <td>{forecast.temperatureC}</td>
-              <td>{forecast.temperatureF}</td>
-              <td>{forecast.summary}</td>
-            </tr>
-          )}
-        </tbody>
-      </table>
-    );
-  }
+        )
+      }
+      </tbody>
+    </table>
+  );
+};
 
-  render() {
-    let contents = this.state.loading
-      ? <p><em>Loading...</em></p>
-      : FetchData.renderForecastsTable(this.state.forecasts);
+export const FetchData = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [forecasts, setForecasts] = useState([]);
 
-    return (
-      <div>
-        <h1 id="tabelLabel" >Weather forecast</h1>
-        <p>This component demonstrates fetching data from the server.</p>
-        {contents}
-      </div>
-    );
-  }
+  useEffect(() => {
+    const populateWeatherData = async () => {
+      const token = await authorizationManager.getAccessToken();
+      const response = await fetch(`${prefixHolder.prefix}/weather-forecast`, {
+        headers: !token ? {} : { 'Authorization': `Bearer ${token}` }
+      });
+      const forecasts = await response.json();
 
-  async populateWeatherData() {
-    const token = await authService.getAccessToken();
-    const response = await fetch('https://localhost:9443/weather-forecast', {
-      headers: !token ? {} : { 'Authorization': `Bearer ${token}` }
-    });
-    const data = await response.json();
-    this.setState({ forecasts: data, loading: false });
-  }
-}
+      setForecasts(forecasts);
+      setIsLoading(false);
+    };
+
+    populateWeatherData().then();
+
+    return () => {
+    };
+  }, []);
+
+  return (
+    <>
+      <h1>Weather forecast</h1>
+      <p>This component demonstrates fetching data from the server.</p>
+      {
+        isLoading
+          ? <p><em>Loading...</em></p>
+          : <ForecastsTable forecasts={forecasts}/>
+      }
+    </>
+  );
+};

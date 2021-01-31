@@ -1,8 +1,8 @@
 import React from 'react'
 import { Component } from 'react'
 import { Route, Redirect } from 'react-router-dom'
-import { ApplicationPaths, QueryParameterNames } from './ApiAuthorizationConstants'
-import authService from './AuthorizeService'
+import { ApplicationPaths, QueryParameterNames } from '../../constants/Authorization';
+import { authorizationManager } from '../../services/authorization-manager';
 
 export default class AuthorizedRoute extends Component {
     constructor(props) {
@@ -15,12 +15,12 @@ export default class AuthorizedRoute extends Component {
     }
 
     componentDidMount() {
-        this._subscription = authService.subscribe(() => this.authenticationChanged());
+        this._subscription = authorizationManager.subscribe(() => this.authenticationChanged());
         this.populateAuthenticationState().then();
     }
 
     componentWillUnmount() {
-        authService.unsubscribe(this._subscription);
+        authorizationManager.unsubscribe(this._subscription);
     }
 
     render() {
@@ -52,7 +52,7 @@ export default class AuthorizedRoute extends Component {
     }
 
     async populateAuthenticationState() {
-        const authenticated = await authService.isAuthenticated();
+        const authenticated = await authorizationManager.isAuthenticated();
         this.setState({ ready: true, authenticated });
     }
 

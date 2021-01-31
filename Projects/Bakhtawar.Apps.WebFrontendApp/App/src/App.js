@@ -1,12 +1,12 @@
 import React from 'react';
-import { Route } from 'react-router';
+import { Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { FetchData } from './components/FetchData';
 import { Count } from './components/Count';
 import AuthorizedRoute from './components/api-authorization/AuthorizedRoute';
 import ApiAuthorizationRoutes from './components/api-authorization/ApiAuthorizationRoutes';
-import { ApplicationPaths } from './components/api-authorization/ApiAuthorizationConstants';
+import { ApplicationPaths } from './constants/Authorization';
 
 import './App.css';
 

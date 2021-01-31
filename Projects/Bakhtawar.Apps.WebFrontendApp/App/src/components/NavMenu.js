@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
-import { LoginMenu } from './api-authorization/LoginMenu';
+import { AccountMenu } from './AccountMenu';
 
 import './NavMenu.css';
 
@@ -29,8 +29,7 @@ export const NavMenu = () => {
               <NavItem>
                 <NavLink tag={Link} className="text-dark" to="/fetch-data">Fetch data</NavLink>
               </NavItem>
-              <LoginMenu>
-              </LoginMenu>
+              <AccountMenu/>
             </ul>
           </Collapse>
         </Container>

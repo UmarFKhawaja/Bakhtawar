@@ -1,8 +1,7 @@
 import React from 'react'
 import { Component } from 'react';
-import authService from './AuthorizeService';
-import { AuthenticationResultStatus } from './AuthorizeService';
-import { QueryParameterNames, LogoutActions, ApplicationPaths } from './ApiAuthorizationConstants';
+import { QueryParameterNames, LogoutActions, ApplicationPaths } from '../../constants/Authorization';
+import { AuthenticationResultStatus, authorizationManager } from '../../services/authorization-manager';
 
 // The main responsibility of this component is to handle the user's logout process.
 // This is the starting point for the logout process, which is usually initiated when a
@@ -66,9 +65,9 @@ export class Logout extends Component {
 
     async logout(returnUrl) {
         const state = { returnUrl };
-        const isauthenticated = await authService.isAuthenticated();
+        const isauthenticated = await authorizationManager.isAuthenticated();
         if (isauthenticated) {
-            const result = await authService.signOut(state);
+            const result = await authorizationManager.signOut(state);
             switch (result.status) {
                 case AuthenticationResultStatus.Redirect:
                     break;
@@ -88,7 +87,7 @@ export class Logout extends Component {
 
     async processLogoutCallback() {
         const url = window.location.href;
-        const result = await authService.completeSignOut(url);
+        const result = await authorizationManager.completeSignOut(url);
         switch (result.status) {
             case AuthenticationResultStatus.Redirect:
                 // There should not be any redirects as the only time completeAuthentication finishes
@@ -106,7 +105,7 @@ export class Logout extends Component {
     }
 
     async populateAuthenticationState() {
-        const authenticated = await authService.isAuthenticated();
+        const authenticated = await authorizationManager.isAuthenticated();
         this.setState({ isReady: true, authenticated });
     }
 

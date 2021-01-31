@@ -1,8 +1,7 @@
 import React from 'react'
 import { Component } from 'react';
-import authService from './AuthorizeService';
-import { AuthenticationResultStatus } from './AuthorizeService';
-import { LoginActions, QueryParameterNames, ApplicationPaths } from './ApiAuthorizationConstants';
+import { LoginActions, QueryParameterNames, ApplicationPaths } from '../../constants/Authorization';
+import { AuthenticationResultStatus, authorizationManager } from '../../services/authorization-manager';
 
 // The main responsibility of this component is to handle the user's login process.
 // This is the starting point for the login process. Any component that needs to authenticate
@@ -65,7 +64,7 @@ export class Login extends Component {
 
     async login(returnUrl) {
         const state = { returnUrl };
-        const result = await authService.signIn(state);
+        const result = await authorizationManager.signIn(state);
         switch (result.status) {
             case AuthenticationResultStatus.Redirect:
                 break;
@@ -82,7 +81,7 @@ export class Login extends Component {
 
     async processLoginCallback() {
         const url = window.location.href;
-        const result = await authService.completeSignIn(url);
+        const result = await authorizationManager.completeSignIn(url);
         switch (result.status) {
             case AuthenticationResultStatus.Redirect:
                 // There should not be any redirects as the only time completeSignIn finishes
