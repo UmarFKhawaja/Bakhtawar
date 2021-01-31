@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import App from './App';
+import { App } from './App';
 // import { register as registerServiceWorker } from './services/service-worker';
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -11,11 +11,11 @@ const rootElement = document.getElementById('root');
 
 const Root = () => (
   <BrowserRouter basename={baseURL}>
-    <App />
+    <App/>
   </BrowserRouter>
 );
 
-ReactDOM.render(<Root />, rootElement);
+ReactDOM.render(<Root/>, rootElement);
 
 // Uncomment the line above that imports the registerServiceWorker function
 // and the line below to register the generated service worker.
@@ -25,4 +25,3 @@ ReactDOM.render(<Root />, rootElement);
 // disabled by default when Identity is being used.
 //
 // registerServiceWorker();
-
