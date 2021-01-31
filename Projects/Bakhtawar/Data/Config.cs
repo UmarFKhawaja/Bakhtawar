@@ -101,7 +101,7 @@ namespace Bakhtawar.Data
                     AllowedGrantTypes = GrantTypes.Code,
                     RedirectUris =
                     {
-                        $"{configuration["OIDC:Callback"]}/signin-oidc"
+                        $"{configuration["OIDC:Callback"]}"
                     },
                     PostLogoutRedirectUris =
                     {
