@@ -1,5 +1,5 @@
 import { UserManager, WebStorageStateStore } from 'oidc-client';
-import { ApplicationPaths, ApplicationName, ApplicationRoot } from './ApiAuthorizationConstants';
+import { ApplicationPaths, ApplicationName } from './ApiAuthorizationConstants';
 
 export class AuthorizeService {
     _callbacks = [];
@@ -14,16 +14,6 @@ export class AuthorizeService {
     async isAuthenticated() {
         const user = await this.getUser();
         return !!user;
-    }
-
-    async signinRedirectCallback() {
-        await this.ensureUserManagerInitialized();
-        try {
-            await this.userManager.signinRedirectCallback();
-        }
-        catch (signInRedirectCallbackError) {
-            console.log("SignIn redirect callback error: ", signInRedirectCallbackError);
-        }
     }
 
     async getUser() {
