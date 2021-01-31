@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Claims;
 using System.Text.Json;
 using IdentityModel;
@@ -12,6 +13,27 @@ namespace Bakhtawar.Data
 {
     public static class Config
     {
+        public static readonly string[] IdentityScopes = new string[]
+        {
+            "openid",
+            "profile",
+            "email"
+        };
+
+        public static readonly string[] DataScopes = new string[]
+        {
+            "bakhtawar.users",
+            "bakhtawar.galleries",
+            "bakhtawar.posts",
+            "bakhtawar.comments"
+        };
+
+        public static readonly string[] AllScopes = Array
+            .Empty<string>()
+            .Union(IdentityScopes)
+            .Union(DataScopes)
+            .ToArray();
+
         public static Func<IEnumerable<IdentityResource>> GetIdentityResources(IConfiguration configuration) =>
             () => new IdentityResource[]
             {
@@ -40,13 +62,7 @@ namespace Bakhtawar.Data
                     Name = "bakhtawar.api",
                     DisplayName = "Bakhtawar API",
                     Description = "Allow clients to access the API",
-                    Scopes = new List<string>
-                    {
-                        "bakhtawar.users",
-                        "bakhtawar.galleries",
-                        "bakhtawar.posts",
-                        "bakhtawar.comments"
-                    },
+                    Scopes = new List<string>(DataScopes),
                     ApiSecrets = new List<Secret>
                     {
                         new Secret("0b4ec19f-d183-4a31-9891-b4e6901202fd".Sha256())
@@ -58,13 +74,7 @@ namespace Bakhtawar.Data
             };
 
         public static Func<IEnumerable<ApiScope>> GetApiScopes(IConfiguration configuration) =>
-            () => new ApiScope[]
-            {
-                new ApiScope("bakhtawar.users"),
-                new ApiScope("bakhtawar.galleries"),
-                new ApiScope("bakhtawar.posts"),
-                new ApiScope("bakhtawar.comments")
-            };
+            () => DataScopes.Select((dataScope) => new ApiScope(dataScope));
 
         public static Func<IEnumerable<Client>> GetClients(IConfiguration configuration) =>
             () => new Client[]
@@ -78,13 +88,7 @@ namespace Bakhtawar.Data
                         new Secret("893bfc0b-880c-4f5e-b258-41d007e08860".Sha256())
                     },
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
-                    AllowedScopes =
-                    {
-                        "bakhtawar.users",
-                        "bakhtawar.galleries",
-                        "bakhtawar.posts",
-                        "bakhtawar.comments"
-                    }
+                    AllowedScopes = DataScopes
                 },
                 new Client
                 {
@@ -103,16 +107,7 @@ namespace Bakhtawar.Data
                     {
                         $"{configuration["OIDC:Callback"]}/signout-callback-oidc"
                     },
-                    AllowedScopes =
-                    {
-                        "openid",
-                        "profile",
-                        "email",
-                        "bakhtawar.users",
-                        "bakhtawar.galleries",
-                        "bakhtawar.posts",
-                        "bakhtawar.comments"
-                    },
+                    AllowedScopes = AllScopes,
                     AllowOfflineAccess = true,
                     RequireClientSecret = false
                 },
@@ -128,16 +123,7 @@ namespace Bakhtawar.Data
                     PostLogoutRedirectUris = { "https://notused" },
                     RequireClientSecret = false,
                     AllowedGrantTypes = GrantTypes.Code,
-                    AllowedScopes =
-                    {
-                        "openid",
-                        "profile",
-                        "email",
-                        "bakhtawar.users",
-                        "bakhtawar.galleries",
-                        "bakhtawar.posts",
-                        "bakhtawar.comments"
-                    },
+                    AllowedScopes = AllScopes,
                     AllowOfflineAccess = true,
                     RefreshTokenUsage = TokenUsage.OneTimeOnly,
                     RefreshTokenExpiration = TokenExpiration.Sliding

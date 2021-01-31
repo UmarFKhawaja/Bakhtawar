@@ -78,13 +78,10 @@ namespace Bakhtawar.Apps.WebFrontendApp
                         options.ResponseMode = OidcConstants.ResponseModes.Query;
                         options.UsePkce = true;
 
-                        options.Scope.Add("openid");
-                        options.Scope.Add("profile");
-                        options.Scope.Add("email");
-                        options.Scope.Add("bakhtawar.users");
-                        options.Scope.Add("bakhtawar.galleries");
-                        options.Scope.Add("bakhtawar.posts");
-                        options.Scope.Add("bakhtawar.comments");
+                        foreach (var scope in Config.AllScopes)
+                        {
+                            options.Scope.Add(scope);
+                        }
                         
                         options.RequireHttpsMetadata = true;
 

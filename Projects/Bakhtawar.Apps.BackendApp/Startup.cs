@@ -102,22 +102,26 @@ namespace Bakhtawar.Apps.BackendApp
                     {
                         options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
 
-                        if (!Environment.IsDevelopment())
+                        if (Environment.IsDevelopment())
                         {
-                            var knownNetworks = Configuration["ForwardedHeadersOptions:KnownNetworks"];
+                            return;
+                        }
 
-                            if (!string.IsNullOrEmpty(knownNetworks))
-                            {
-                                foreach (var knownNetwork in knownNetworks.Split(";"))
-                                {
-                                    var parts = knownNetwork.Split(":");
+                        var knownNetworks = Configuration["ForwardedHeadersOptions:KnownNetworks"];
 
-                                    var prefix = parts[0];
-                                    var prefixLength = int.Parse(parts[1]);
+                        if (string.IsNullOrEmpty(knownNetworks))
+                        {
+                            return;
+                        }
 
-                                    options.KnownNetworks.Add(new IPNetwork(IPAddress.Parse(prefix), prefixLength));
-                                }
-                            }
+                        foreach (var knownNetwork in knownNetworks.Split(";"))
+                        {
+                            var parts = knownNetwork.Split(":");
+
+                            var prefix = parts[0];
+                            var prefixLength = int.Parse(parts[1]);
+
+                            options.KnownNetworks.Add(new IPNetwork(IPAddress.Parse(prefix), prefixLength));
                         }
                     }
                 );
