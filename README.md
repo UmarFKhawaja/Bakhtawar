@@ -8,7 +8,7 @@ You can;
 To use Docker to run PostgreSQL locally, use the following command:
 
 ```bash
-docker run -e POSTGRES_USER=bakhtawar -e POSTGRES_PASSWORD=Bakhtawar123 -d bakhtawar
+docker run -p 5432:5342 -e POSTGRES_USER=bakhtawar -e POSTGRES_PASSWORD=Bakhtawar123 -d bakhtawar
 ```
 
 #### 2. Create an empty database called bakhtawar
