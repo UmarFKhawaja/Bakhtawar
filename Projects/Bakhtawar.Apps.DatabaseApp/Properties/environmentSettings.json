@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "Bakhtawar.Apps.DatabaseApp": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DOTNET_ENVIRONMENT": "Development",
+        "DOTNET_Application__Name": "Bakhtawar",
+        "DOTNET_OIDC__Authority": "https://id.bakhtawar.co.uk",
+        "DOTNET_OIDC__Callback": "https://bakhtawar.co.uk"
+      }
+    }
+  }
+}

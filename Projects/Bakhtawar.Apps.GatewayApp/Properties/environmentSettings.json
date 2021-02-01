@@ -1,7 +1,7 @@
 {
     "ASPNETCORE_URLS": "http://localhost:7080",
     "ASPNETCORE_Application__Name": "Bakhtawar",
-    "ASPNETCORE_ConnectionStrings__Bakhtawar": "Server=.;Database=Bakhtawar;User Id=sa;Password=Bakhtawar123",
+    "ASPNETCORE_ConnectionStrings__Bakhtawar": "User ID=bakhtawar;Password=Bakhtawar123;Host=localhost;Port=5432;Database=bakhtawar;",
     "ASPNETCORE_IdentityServer__Key__Type": "File",
     "ASPNETCORE_IdentityServer__Key__FilePath": "localhost.pfx",
     "ASPNETCORE_IdentityServer__Key__Password": "Bakhtawar123",

@@ -1,8 +1,8 @@
 {
-    "ASPNETCORE_URLS": "https://localhost:8443",
+    "ASPNETCORE_URLS": "http://localhost:8080",
     "ASPNETCORE_Application__Name": "Bakhtawar",
-    "ASPNETCORE_ConnectionStrings__Bakhtawar": "Server=.;Database=Bakhtawar;User Id=sa;Password=Bakhtawar123",
+    "ASPNETCORE_ConnectionStrings__Bakhtawar": "User ID=bakhtawar;Password=Bakhtawar123;Host=localhost;Port=5432;Database=bakhtawar;",
     "ASPNETCORE_ForwardedHeadersOptions__KnownNetworks": "",
-    "ASPNETCORE_OIDC__Authority": "https://localhost:7443",
+    "ASPNETCORE_OIDC__Authority": "https://id.bakhtawar.co.uk",
     "ASPNETCORE_OIDC__ClientId": "bakhtawar.web"
 }
