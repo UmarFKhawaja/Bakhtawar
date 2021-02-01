@@ -1,3 +1,5 @@
+import { prefixHolder } from '../services/prefix-holder';
+
 export const ApplicationName = 'Bakhtawar';
 
 export const ConfigurationName = 'bakhtawar.web';
@@ -21,14 +23,12 @@ export const LoginActions = {
   Register: 'register'
 };
 
-const gateway = 'https://localhost:7443';
-
-const prefix = '/authentication';
+const prefix = '/account';
 
 export const ApplicationPaths = {
   DefaultLoginRedirectPath: '/',
-  ApiAuthorizationClientConfigurationUrl: `${gateway}/_configuration/${ConfigurationName}`,
-  ApiAuthorizationPrefix: prefix,
+  AuthorizationClientConfigurationURL: `${prefixHolder.Gateway}/_configuration/${ConfigurationName}`,
+  AuthorizationPrefix: prefix,
   Login: `${prefix}/${LoginActions.Login}`,
   LoginFailed: `${prefix}/${LoginActions.LoginFailed}`,
   LoginCallback: `${prefix}/${LoginActions.LoginCallback}`,
@@ -37,6 +37,6 @@ export const ApplicationPaths = {
   LogOut: `${prefix}/${LogoutActions.Logout}`,
   LoggedOut: `${prefix}/${LogoutActions.LoggedOut}`,
   LogOutCallback: `${prefix}/${LogoutActions.LogoutCallback}`,
-  IdentityRegisterPath: '/Account/Register',
-  IdentityManagePath: '/Account/Manage'
+  RegisterPath: '/account/register',
+  ManagePath: '/account/manage'
 };

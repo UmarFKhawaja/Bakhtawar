@@ -36,7 +36,7 @@ export const FetchData = () => {
   useEffect(() => {
     const populateWeatherData = async () => {
       const token = await authorizationManager.getAccessToken();
-      const response = await fetch(`${prefixHolder.prefix}/weather-forecast`, {
+      const response = await fetch(`${prefixHolder.API}/weather-forecast`, {
         headers: !token ? {} : { 'Authorization': `Bearer ${token}` }
       });
       const forecasts = await response.json();

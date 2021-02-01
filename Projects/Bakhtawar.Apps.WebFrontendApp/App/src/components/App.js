@@ -15,6 +15,6 @@ export const App = () => (
     <Route exact path='/' component={Home}/>
     <Route path='/count' component={Count}/>
     <AuthorizedRoute path='/fetch-data' component={FetchData}/>
-    <Route path={ApplicationPaths.ApiAuthorizationPrefix} component={AuthorizationRoutes}/>
+    <Route path={ApplicationPaths.AuthorizationPrefix} component={AuthorizationRoutes}/>
   </Layout>
 );

@@ -208,7 +208,7 @@ export class AuthorizationManager {
       return;
     }
 
-    let response = await fetch(ApplicationPaths.ApiAuthorizationClientConfigurationUrl);
+    let response = await fetch(ApplicationPaths.AuthorizationClientConfigurationURL);
 
     if (!response.ok) {
       throw new Error(`Could not load settings for '${ApplicationName}'`);

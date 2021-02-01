@@ -109,11 +109,11 @@ export class Login extends Component {
     }
 
     redirectToRegister() {
-        this.redirectToApiAuthorizationPath(`${ApplicationPaths.IdentityRegisterPath}?${QueryParameterNames.ReturnUrl}=${encodeURI(ApplicationPaths.Login)}`);
+        this.redirectToApiAuthorizationPath(`${ApplicationPaths.RegisterPath}?${QueryParameterNames.ReturnUrl}=${encodeURI(ApplicationPaths.Login)}`);
     }
 
     redirectToProfile() {
-        this.redirectToApiAuthorizationPath(ApplicationPaths.IdentityManagePath);
+        this.redirectToApiAuthorizationPath(ApplicationPaths.ManagePath);
     }
 
     redirectToApiAuthorizationPath(apiAuthorizationPath) {
