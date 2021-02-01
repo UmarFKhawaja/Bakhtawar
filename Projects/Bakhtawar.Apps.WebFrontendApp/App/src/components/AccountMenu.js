@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { authorizationManager } from '../services/authorization-manager';
-import { ApplicationPaths } from '../constants/Authorization';
+import { ApplicationPaths } from 'constants/Authorization';
+import { authorizationManager } from 'services/authorization-manager';
 
 const AuthenticatedView = ({ userName, profilePath, logoutPath }) => {
   return (

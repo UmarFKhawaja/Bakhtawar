@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
-import { AccountMenu } from './AccountMenu';
+import { AccountMenu } from 'components/AccountMenu';
 
 import './NavMenu.css';
 

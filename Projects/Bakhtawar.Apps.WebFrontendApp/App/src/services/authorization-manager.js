@@ -1,5 +1,5 @@
 import { UserManager, WebStorageStateStore } from 'oidc-client';
-import { ApplicationPaths, ApplicationName } from '../constants/Authorization';
+import { ApplicationPaths, ApplicationName } from 'constants/Authorization';
 
 export class AuthorizationManager {
   _callbacks = [];

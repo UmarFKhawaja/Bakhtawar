@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { ApplicationPaths, QueryParameterNames } from '../constants/Authorization';
-import { authorizationManager } from '../services/authorization-manager';
+import { ApplicationPaths, QueryParameterNames } from 'constants/Authorization';
+import { authorizationManager } from 'services/authorization-manager';
 
 export const AuthorizedRoute = (props) => {
   const [isReady, setIsReady] = useState(false);

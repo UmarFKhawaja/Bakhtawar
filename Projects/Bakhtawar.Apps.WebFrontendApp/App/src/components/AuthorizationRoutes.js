@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route } from 'react-router';
-import { Login } from './Login';
-import { Logout } from './Logout';
-import { ApplicationPaths, LoginActions, LogoutActions } from '../constants/Authorization';
+import { Login } from 'components/Login';
+import { Logout } from 'components/Logout';
+import { ApplicationPaths, LoginActions, LogoutActions } from 'constants/Authorization';
 
 export const AuthorizationRoutes = () => (
   <>

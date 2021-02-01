@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { authorizationManager } from '../services/authorization-manager';
-import { prefixHolder } from '../services/prefix-holder';
+import { authorizationManager } from 'services/authorization-manager';
+import { prefixHolder } from 'services/prefix-holder';
 
 const ForecastsTable = ({ forecasts }) => {
   return (
