@@ -18,7 +18,7 @@ export const Logout = ({ action }) => {
       throw new Error('Invalid return url. The return url needs to have the same origin as the current page.');
     }
 
-    return (state && state.returnUrl) || fromQuery || `${window.location.origin}${ApplicationPaths.LoggedOut}`;
+    return (state && state.returnUrl) || fromQuery || `${window.location.origin}`;
   }, []);
 
   const navigateToReturnUrl = useCallback((returnUrl) => window.location.replace(returnUrl), []);
