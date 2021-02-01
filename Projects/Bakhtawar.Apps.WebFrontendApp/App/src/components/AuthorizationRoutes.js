@@ -13,6 +13,5 @@ export const AuthorizationRoutes = () => (
     <Route path={ApplicationPaths.Register}><Login action={LoginActions.Register}/></Route>
     <Route path={ApplicationPaths.LogOut}><Logout action={LogoutActions.Logout}/></Route>
     <Route path={ApplicationPaths.LogOutCallback}><Logout action={LogoutActions.LogoutCallback}/></Route>
-    <Route path={ApplicationPaths.LoggedOut}><Logout action={LogoutActions.LoggedOut}/></Route>
   </>
 );

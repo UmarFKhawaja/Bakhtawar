@@ -11,8 +11,7 @@ export const QueryParameterNames = {
 
 export const LogoutActions = {
   LogoutCallback: 'logout-callback',
-  Logout: 'logout',
-  LoggedOut: 'logged-out'
+  Logout: 'logout'
 };
 
 export const LoginActions = {
@@ -35,7 +34,6 @@ export const ApplicationPaths = {
   Register: `${prefix}/${LoginActions.Register}`,
   Profile: `${prefix}/${LoginActions.Profile}`,
   LogOut: `${prefix}/${LogoutActions.Logout}`,
-  LoggedOut: `${prefix}/${LogoutActions.LoggedOut}`,
   LogOutCallback: `${prefix}/${LogoutActions.LogoutCallback}`,
   RegisterPath: '/account/register',
   ManagePath: '/account/manage'

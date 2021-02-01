@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { QueryParameterNames, LogoutActions, ApplicationPaths } from 'constants/Authorization';
+import { QueryParameterNames, LogoutActions } from 'constants/Authorization';
 import { AuthenticationResultStatus, authorizationManager } from 'services/authorization-manager';
 
 // The main responsibility of this component is to handle the user's logout process.
@@ -45,7 +45,7 @@ export const Logout = ({ action }) => {
           throw new Error('Invalid authentication result status.');
       }
     } else {
-      setMessage('You successfully logged out!');
+      await navigateToReturnUrl(returnUrl);
     }
   }, [navigateToReturnUrl]);
 
@@ -94,11 +94,6 @@ export const Logout = ({ action }) => {
         processLogoutCallback().then();
         break;
 
-      case LogoutActions.LoggedOut:
-        setIsReady(true);
-        setMessage('You successfully logged out!');
-        break;
-
       default:
         throw new Error(`Invalid action '${action}'`);
     }
@@ -129,11 +124,6 @@ export const Logout = ({ action }) => {
       case LogoutActions.LogoutCallback:
         return (
           <div>Processing logout callback</div>
-        );
-
-      case LogoutActions.LoggedOut:
-        return (
-          <div>{message}</div>
         );
 
       default:
