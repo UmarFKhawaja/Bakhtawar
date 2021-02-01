@@ -1,7 +1,7 @@
 import React from 'react'
 import { Component } from 'react';
-import { LoginActions, QueryParameterNames, ApplicationPaths } from '../../constants/Authorization';
-import { AuthenticationResultStatus, authorizationManager } from '../../services/authorization-manager';
+import { LoginActions, QueryParameterNames, ApplicationPaths } from '../constants/Authorization';
+import { AuthenticationResultStatus, authorizationManager } from '../services/authorization-manager';
 
 // The main responsibility of this component is to handle the user's login process.
 // This is the starting point for the login process. Any component that needs to authenticate
