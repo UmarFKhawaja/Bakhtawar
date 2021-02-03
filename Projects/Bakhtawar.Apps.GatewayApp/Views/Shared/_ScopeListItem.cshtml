@@ -1,11 +1,11 @@
-﻿@model Bakhtawar.Apps.GatewayApp.ViewModels.Consent.ScopeViewModel
+﻿@model Bakhtawar.Apps.GatewayApp.ViewModels.Account.ScopeViewModel
 
 <li class="list-group-item">
     <label>
         <input class="consent-scopecheck"
                type="checkbox"
                name="ScopesConsented"
-               id="scopes_@Model.Value"
+               id="scopes-@Model.Value"
                value="@Model.Value"
                checked="@Model.Checked"
                disabled="@Model.Required" />
@@ -28,7 +28,7 @@
     @if (Model.Description != null)
     {
         <div class="consent-description">
-            <label for="scopes_@Model.Value">@Model.Description</label>
+            <label for="scopes-@Model.Value">@Model.Description</label>
         </div>
     }
 </li>

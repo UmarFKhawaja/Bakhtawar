@@ -7,13 +7,12 @@
         <meta name="apple-mobile-web-app-title" content="Bakhtawar"/>
         <meta name="application-name" content="Bakhtawar"/>
         <meta name="msapplication-TileColor" content="#2b5797"/>
-        <base href="/"/>
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
         <link rel="manifest" href="/manifest.json"/>
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2b5797"/>
-        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap@4.6.0/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="/css/site.css"/>
         <title>Bakhtawar</title>
     </head>
@@ -21,14 +20,14 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="main-nav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                    <img style="margin-top: -6px;" src="/icon.png" alt="Bakhtawar Logo" width="30" height="30"/>
+                    <img class="navbar-logo" src="/icon.png" alt="Bakhtawar Logo" width="30" height="30"/>
                     Bakhtawar
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbar">
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
                             <a class="nav-link js-scroll-trigger" href="#features">Features</a>
                         </li>
@@ -45,13 +44,32 @@
                 </div>
             </div>
         </nav>
-        <header class="bg-primary text-white masthead">
+        <header class="bg-transparent text-white masthead">
             <div class="container text-center">
-                <h1>Welcome to Bakhtawar</h1>
-                <p class="lead">A starter template for a full-stack solution with web and native applications</p>
+                <h1>Bakhtawar Backend</h1>
+                <p class="lead">A GraphQL-based API backend running on .NET 5.0</p>
             </div>
         </header>
-        <section id="features" class="bg-light">
+        <section id="power" class="bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="welcome-page">
+                            <h3 class="text-muted">Powered by</h3>
+                            <h1>
+                                <a href="https://chillicream.com/docs/hotchocolate/" class="text-decoration-none" target="_blank">
+                                    <img src="/img/hot-chocolate.png" alt="Hot Chocolate"/>
+                                    <span class="text-dark">Hot Chocolate</span>
+                                </a>
+                            </h1>
+                            <h5><text>v</text>11.0.9</h5>
+                            <p><a href="/.well-known/graphql-playground" class="text-muted">GraphQL Playground</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="features">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
@@ -65,7 +83,7 @@
                 </div>
             </div>
         </section>
-        <section id="technology">
+        <section id="technology" class="bg-light">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
@@ -85,7 +103,7 @@
                 </div>
             </div>
         </section>
-        <section id="contact" class="bg-light">
+        <section id="contact">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
@@ -99,7 +117,7 @@
                 </div>
             </div>
         </section>
-        <section id="about">
+        <section id="about" class="bg-light">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
@@ -118,9 +136,10 @@
                 <p class="m-0 text-center text-white">Copyright &copy; Bakhtawar 2020-2021</p>
             </div>
         </footer>
-        <script type="text/javascript" src="/lib/jquery/dist/jquery.min.js"></script>
-        <script type="text/javascript" src="/lib/jquery-easing/dist/jquery.easing.min.js"></script>
-        <script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="/js/site.js"></script>
+        <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.js"></script>
+        <script src="https://unpkg.com/jquery.easing@1.4.1/jquery.easing.js"></script>
+        <script src="https://unpkg.com/@popperjs/core@2.6.0/dist/umd/popper.js"></script>
+        <script src="https://unpkg.com/bootstrap@4.6.0/dist/js/bootstrap.js"></script>
+        <script src="/js/site.js"></script>
     </body>
 </html>

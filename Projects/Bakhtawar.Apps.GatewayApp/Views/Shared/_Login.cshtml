@@ -1,0 +1,32 @@
+﻿@using Bakhtawar.Models
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+@{
+    var returnUrl = (string)null;
+    var query = ViewContext.HttpContext.Request.Query;
+
+    if (query.ContainsKey("returnUrl"))
+    {
+        returnUrl = query["returnUrl"];
+    }
+}
+@if (SignInManager.IsSignedIn(User))
+{
+    <li class="nav-item">
+        <form class="form-inline" asp-controller="Account" asp-action="Logout" asp-route-returnUrl="/">
+            <button type="submit" class="nav-link btn btn-link">Logout</button>
+        </form>
+    </li>
+}
+else
+{
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Account" asp-action="Register" asp-route-returnUrl="@returnUrl">Register</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-controller="Account" asp-action="Login" asp-route-returnUrl="@returnUrl">Login</a>
+    </li>
+}
+

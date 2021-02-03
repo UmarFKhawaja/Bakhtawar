@@ -22,6 +22,10 @@
     <ProjectReference Include="..\Bakhtawar\Bakhtawar.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controllers\OidcConfiguration" />
+    <_ContentIncludedByDefault Remove="Views\Login\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\Consent" />
+    <Folder Include="ViewModels\Consent" />
   </ItemGroup>
 </Project>

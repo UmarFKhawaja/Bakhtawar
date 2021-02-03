@@ -24,7 +24,18 @@ namespace Bakhtawar.Apps.GatewayApp.Filters
                 }
 
                 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy
-                var csp = "default-src 'self'; object-src 'none'; frame-ancestors 'self'; sandbox allow-forms allow-same-origin allow-scripts; base-uri 'self';";
+                var csp = string.Join(" ", new string[]
+                {
+                    "default-src 'self';",
+                    "style-src-elem 'self' https://unpkg.com;",
+                    "script-src-elem 'self' https://unpkg.com;",
+                    "font-src 'self' https://unpkg.com;",
+                    "object-src 'none';",
+                    "img-src 'self' data:;",
+                    "frame-ancestors 'self';",
+                    "sandbox allow-forms allow-same-origin allow-scripts;",
+                    "base-uri 'self';"
+                });
 
                 // also consider adding upgrade-insecure-requests once you have HTTPS in place for production
                 //csp += "upgrade-insecure-requests;";

@@ -1,4 +1,4 @@
-using Bakhtawar.Apps.GatewayApp.ViewModels.Consent;
+using Bakhtawar.Apps.GatewayApp.ViewModels.Account;
 using IdentityServer4.Models;
 
 namespace Bakhtawar.Apps.GatewayApp.Results

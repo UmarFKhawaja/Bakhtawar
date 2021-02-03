@@ -1,28 +1,25 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <title>Bakhtawar</title>
-
-    <partial name="_FavIcons" />
-
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
-</head>
-<body>
-    <partial name="_Nav" />
-
-    <div class="container body-container">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <partial name="_FavIcons" />
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap@4.6.0/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="https://unpkg.com/bootstrap-social@5.1.1/bootstrap-social.css" />
+        <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <title>Bakhtawar</title>
+    </head>
+    <body id="page-top">
+        <partial name="_Nav" />
         @RenderBody()
-    </div>
-
-    <script src="~/lib/jquery/dist/jquery.slim.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-
-    @RenderSection("scripts", required: false)
-</body>
+        <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.js"></script>
+        <script src="https://unpkg.com/jquery.easing@1.4.1/jquery.easing.js"></script>
+        <script src="https://unpkg.com/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+        <script src="https://unpkg.com/jquery-validation-unobtrusive@3.2.11/dist/jquery.validate.unobtrusive.js"></script>
+        <script src="https://unpkg.com/@@popperjs/core@2.6.0/dist/umd/popper.js"></script>
+        <script src="https://unpkg.com/bootstrap@4.6.0/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @RenderSection("scripts", required: false)
+    </body>
 </html>

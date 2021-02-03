@@ -12,42 +12,45 @@
     }
 }
 
-<header class="nav-page">
-    <nav class="navbar navbar-expand-sm navbar-dark navbar-toggleable-sm bg-dark border-bottom box-shadow mb-3">
-        <a class="navbar-brand" href="~/">
-            <img src="~/icon.png" class="icon-banner"/>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="main-nav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">
+            <img class="navbar-logo" src="~/icon.png" alt="Bakhtawar Logo" width="30" height="30"/>
             Bakhtawar
         </a>
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a href="~/.well-known/openid-configuration" class="nav-link">Configuration</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" asp-controller="Diagnostics" asp-action="Index">Claims</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" asp-controller="Grants" asp-action="Index">Grants</a>
-            </li>
-        </ul>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <ul class="navbar-nav nav justify-content-end">
-            @{
-                var result = Engine.FindView(ViewContext, "_LoginPartial", isMainPage: false);
-            }
-            @if (result.Success)
-            {
-                await Html.RenderPartialAsync("_LoginPartial");
-            }
-            else
-            {
-                throw new InvalidOperationException("The default Identity UI layout requires a partial view '_LoginPartial' " +
-                    "usually located at '/Pages/_LoginPartial' or at '/Views/Shared/_LoginPartial' to work. Based on your configuration " +
-                    $"we have looked at it in the following locations: {System.Environment.NewLine}{string.Join(System.Environment.NewLine, result.SearchedLocations)}.");
-            }
-        </ul>
-    </nav>
-</header>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#features">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#technology">Technology</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                @{
+                    var result = Engine.FindView(ViewContext, "_Login", isMainPage: false);
+                }
+                @if (result.Success)
+                {
+                    await Html.RenderPartialAsync("_Login");
+                }
+                else
+                {
+                    throw new InvalidOperationException("The default Identity UI layout requires a partial view '_Login' " +
+                        "usually located at '/Pages/_Login' or at '/Views/Shared/_Login' to work. Based on your configuration " +
+                                                        $"we have looked at it in the following locations: {System.Environment.NewLine}{string.Join(System.Environment.NewLine, result.SearchedLocations)}.");
+                }
+            </ul>
+        </div>
+    </div>
+</nav>

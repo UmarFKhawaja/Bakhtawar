@@ -6,9 +6,13 @@ section {
     padding: 150px 0;
 }
 
+.navbar-logo {
+    margin-top: -6px;
+}
+
 header.masthead {
     position: relative;
-    background: #343a40 url(../img/bg-masthead.jpg) no-repeat center center;
+    background: #ffffff url(../img/bg-masthead.jpg) no-repeat center center;
     background-size: cover;
     padding-top: 8rem;
     padding-bottom: 8rem
