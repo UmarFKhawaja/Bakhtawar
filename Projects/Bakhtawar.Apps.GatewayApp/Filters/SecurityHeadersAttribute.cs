@@ -33,7 +33,7 @@ namespace Bakhtawar.Apps.GatewayApp.Filters
                     "object-src 'none';",
                     "img-src 'self' data:;",
                     "frame-ancestors 'self';",
-                    "sandbox allow-forms allow-same-origin allow-scripts;",
+                    "sandbox allow-popups allow-forms allow-same-origin allow-scripts;",
                     "base-uri 'self';"
                 });
 

@@ -16,7 +16,7 @@ const NavbarLogo = styled.img.attrs(() => ({
   width: 30,
   height: 30
 }))`
-  margin-right: 5px;
+  margin-right: 6px;
 `;
 
 export const NavMenu = () => {
