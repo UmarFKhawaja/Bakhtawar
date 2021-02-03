@@ -27,8 +27,8 @@ namespace Bakhtawar.Apps.GatewayApp.Filters
                 var csp = string.Join(" ", new string[]
                 {
                     "default-src 'self';",
-                    "style-src-elem 'self' https://unpkg.com;",
-                    "script-src-elem 'self' https://unpkg.com;",
+                    "style-src 'self' https://unpkg.com;",
+                    "script-src 'self' https://unpkg.com;",
                     "font-src 'self' https://unpkg.com;",
                     "object-src 'none';",
                     "img-src 'self' data:;",
