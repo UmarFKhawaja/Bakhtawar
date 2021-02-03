@@ -1,13 +1,13 @@
-﻿header {
-    padding: 156px 0 100px;
-}
-
-section {
+﻿section {
     padding: 150px 0;
 }
 
 .navbar-logo {
     margin-top: -6px;
+}
+
+header {
+    padding: 156px 0 100px;
 }
 
 header.masthead {
@@ -59,23 +59,4 @@ header.masthead h1 {
 
 .main-container {
     margin-top: 60px;
-}
-
-.grants-page .card {
-    margin-top: 20px;
-    border-bottom: 1px solid lightgray;
-}
-
-.grants-page .card .card-title {
-    font-size: 120%;
-    font-weight: bold;
-}
-
-.grants-page .card .card-title img {
-    width: 100px;
-    height: 100px;
-}
-
-.grants-page .card label {
-    font-weight: bold;
 }
