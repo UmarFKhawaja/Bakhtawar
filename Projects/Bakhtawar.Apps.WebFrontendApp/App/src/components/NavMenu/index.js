@@ -29,7 +29,7 @@ export const NavMenu = () => {
   return (
     <Navbar className="bg-dark" expand="lg" dark fixed="top" id="main-nav">
       <Container>
-        <NavbarBrand tag={Link} to="#page-top">
+        <NavbarBrand tag={Link} to="#app">
           <NavbarLogo/>
           Bakhtawar
         </NavbarBrand>

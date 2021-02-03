@@ -18,16 +18,17 @@ const UnauthenticatedView = ({ registerPath, loginPath }) => {
   return (
     <>
       <NavItem>
-        <NavLink tag={Link} className="text-light" to={registerPath}>Register</NavLink>
+        <NavLink tag={Link} to={registerPath}>Register</NavLink>
       </NavItem>
       <NavItem>
-        <NavLink tag={Link} className="navbar-light" to={loginPath}>Login</NavLink>
+        <NavLink tag={Link} to={loginPath}>Login</NavLink>
       </NavItem>
     </>
   );
 };
 
 export const AccountMenu = () => {
+  const [isReady, setIsReady] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userName, setUserName] = useState(null);
 
@@ -47,7 +48,7 @@ export const AccountMenu = () => {
   useEffect(() => {
     const subscription = authorizationManager.subscribe(populateState);
 
-    populateState().then();
+    populateState().then(() => setIsReady(true));
 
     return () => {
       authorizationManager.unsubscribe(subscription);
@@ -55,16 +56,26 @@ export const AccountMenu = () => {
   }, []);
 
   return (
-    <ul className="navbar-nav ml-auto">
+    <>
       {
-        isAuthenticated
+        isReady
           ? (
-            <AuthenticatedView userName={userName} profilePath={`${ApplicationPaths.Profile}`} logoutPath={{ pathname: `${ApplicationPaths.LogOut}`, state: { local: true } }}/>
+            <ul className="navbar-nav ml-auto">
+              {
+                isAuthenticated
+                  ? (
+                    <AuthenticatedView userName={userName} profilePath={`${ApplicationPaths.Profile}`} logoutPath={{ pathname: `${ApplicationPaths.LogOut}`, state: { local: true } }}/>
+                  )
+                  : (
+                    <UnauthenticatedView registerPath={`${ApplicationPaths.Register}`} loginPath={`${ApplicationPaths.Login}`}/>
+                  )
+              }
+            </ul>
           )
           : (
-            <UnauthenticatedView registerPath={`${ApplicationPaths.Register}`} loginPath={`${ApplicationPaths.Login}`}/>
+            <></>
           )
       }
-    </ul>
+    </>
   );
 };
