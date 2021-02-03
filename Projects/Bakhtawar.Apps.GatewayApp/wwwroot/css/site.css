@@ -12,7 +12,7 @@ section {
 
 header.masthead {
     position: relative;
-    background: #ffffff url(/img/bg-masthead.jpg) no-repeat center center;
+    background: #343a40 url(/img/bg-masthead.jpg) no-repeat center center;
     background-size: cover;
     padding-top: 8rem;
     padding-bottom: 8rem;
@@ -45,6 +45,10 @@ header.masthead h1 {
 
 .welcome-page li {
     list-style: none;
+}
+
+.btn-logout {
+    line-height: 22px;
 }
 
 .logged-out-page iframe {
