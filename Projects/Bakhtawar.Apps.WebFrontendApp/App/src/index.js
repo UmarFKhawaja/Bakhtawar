@@ -1,21 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
 import { App } from 'components/App';
 // import { register as registerServiceWorker } from './services/service-worker';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
-const baseURL = document.getElementsByTagName('base')[0].getAttribute('href');
-const rootElement = document.getElementById('root');
-
-const Root = () => (
-  <BrowserRouter basename={baseURL}>
-    <App/>
-  </BrowserRouter>
-);
-
-ReactDOM.render(<Root/>, rootElement);
+ReactDOM.render(<App/>, document.getElementById('app'));
 
 // Uncomment the line above that imports the registerServiceWorker function
 // and the line below to register the generated service worker.

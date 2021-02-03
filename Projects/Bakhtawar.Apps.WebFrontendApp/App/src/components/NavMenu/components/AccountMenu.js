@@ -4,14 +4,11 @@ import { Link } from 'react-router-dom';
 import { ApplicationPaths } from 'constants/Authorization';
 import { authorizationManager } from 'services/authorization-manager';
 
-const AuthenticatedView = ({ userName, profilePath, logoutPath }) => {
+const AuthenticatedView = ({ logoutPath }) => {
   return (
     <>
       <NavItem>
-        <NavLink tag={Link} className="text-dark" to={profilePath}>Hello {userName}</NavLink>
-      </NavItem>
-      <NavItem>
-        <NavLink tag={Link} className="text-dark" to={logoutPath}>Logout</NavLink>
+        <NavLink tag={Link} className="text-light" to={logoutPath}>Logout</NavLink>
       </NavItem>
     </>
   );
@@ -21,10 +18,10 @@ const UnauthenticatedView = ({ registerPath, loginPath }) => {
   return (
     <>
       <NavItem>
-        <NavLink tag={Link} className="text-dark" to={registerPath}>Register</NavLink>
+        <NavLink tag={Link} className="text-light" to={registerPath}>Register</NavLink>
       </NavItem>
       <NavItem>
-        <NavLink tag={Link} className="text-dark" to={loginPath}>Login</NavLink>
+        <NavLink tag={Link} className="navbar-light" to={loginPath}>Login</NavLink>
       </NavItem>
     </>
   );
@@ -57,19 +54,17 @@ export const AccountMenu = () => {
     };
   }, []);
 
-  if (!isAuthenticated) {
-    const registerPath = `${ApplicationPaths.Register}`;
-    const loginPath = `${ApplicationPaths.Login}`;
-
-    return (
-      <UnauthenticatedView registerPath={registerPath} loginPath={loginPath}/>
-    );
-  } else {
-    const profilePath = `${ApplicationPaths.Profile}`;
-    const logoutPath = { pathname: `${ApplicationPaths.LogOut}`, state: { local: true } };
-
-    return (
-      <AuthenticatedView userName={userName} profilePath={profilePath} logoutPath={logoutPath}/>
-    );
-  }
+  return (
+    <ul className="navbar-nav ml-auto">
+      {
+        isAuthenticated
+          ? (
+            <AuthenticatedView userName={userName} profilePath={`${ApplicationPaths.Profile}`} logoutPath={{ pathname: `${ApplicationPaths.LogOut}`, state: { local: true } }}/>
+          )
+          : (
+            <UnauthenticatedView registerPath={`${ApplicationPaths.Register}`} loginPath={`${ApplicationPaths.Login}`}/>
+          )
+      }
+    </ul>
+  );
 };
