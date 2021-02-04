@@ -1,0 +1,10 @@
+{
+    "ASPNETCORE_URLS": "http://localhost:10080",
+    "ASPNETCORE_Application__Name": "Bakhtawar",
+    "ASPNETCORE_ConnectionStrings__Bakhtawar": "User ID=bakhtawar;Password=Bakhtawar123;Host=localhost;Port=5432;Database=bakhtawar;",
+    "ASPNETCORE_ForwardedHeadersOptions__KnownNetworks": "",
+    "ASPNETCORE_Cors__Origins": "https://queue.bakhtawar.co.uk",
+    "ASPNETCORE_JwtBearer__Authority": "https://id.bakhtawar.co.uk",
+    "ASPNETCORE_Security__Hangfire__UserName": "administrator",
+    "ASPNETCORE_Security__Hangfire__Password": "Bakhtawar123"
+}

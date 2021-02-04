@@ -28,7 +28,7 @@ export const Header = () => {
     <StyledHeader>
       <StyledContainer>
         <StyledH1>Bakhtawar Web Frontend</StyledH1>
-        <StyledP>A React-based web frontend running on .NET 5.0</StyledP>
+        <StyledP>React-based web frontend running on .NET 5.0</StyledP>
       </StyledContainer>
     </StyledHeader>
   );

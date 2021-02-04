@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings:Bakhtawar": "User ID=bakhtawar;Password=Bakhtawar123;Host=localhost;Port=5432;Database=bakhtawar;",
+  "Security:Hangfire:UserName": "administrator",
+  "Security:Hangfire:Password": "Bakhtawar123"
+}

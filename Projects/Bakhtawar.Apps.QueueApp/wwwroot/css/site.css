@@ -1,0 +1,53 @@
+section {
+    padding: 150px 0;
+}
+
+.navbar-logo {
+    margin-top: -6px;
+}
+
+header {
+    padding: 156px 0 100px;
+}
+
+header.masthead {
+    position: relative;
+    background: #ffffff url(../img/bg-masthead.jpg) no-repeat center center;
+    background-size: cover;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
+
+header.masthead .overlay {
+    position: absolute;
+    background-color: #212529;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+}
+
+header.masthead h1 {
+    font-size: 2rem;
+    text-shadow: 0 0 8px hsl(0, 0%, 0%);
+}
+
+header.masthead p {
+    text-shadow: 0 0 8px hsl(0, 0%, 0%);
+}
+
+@media (min-width: 768px) {
+    header.masthead {
+        padding-top:12rem;
+        padding-bottom: 12rem;
+    }
+
+    header.masthead h1 {
+        font-size: 3rem;
+    }
+}
+
+.welcome-page li {
+    list-style: none;
+}

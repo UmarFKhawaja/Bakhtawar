@@ -117,7 +117,7 @@ namespace Bakhtawar.Apps.GatewayApp.Controllers.Account
                     Email = context?.LoginHint,
                     ReturnUrl = returnUrl,
                     ExternalProviders = !local
-                        ? new[] { new ExternalProvider { AuthenticationScheme = context.IdP } }
+                        ? new [] { new ExternalProvider { AuthenticationScheme = context.IdP } }
                         : Enumerable.Empty<ExternalProvider>()
                 };
 
