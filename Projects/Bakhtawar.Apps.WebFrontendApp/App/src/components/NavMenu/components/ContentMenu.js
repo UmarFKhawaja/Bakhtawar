@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { NavItem, NavLink } from 'reactstrap';
+import Scrollspy from 'react-scrollspy';
 import { useContent } from 'components/Content';
 
 export const ContentMenu = () => {
@@ -15,7 +16,7 @@ export const ContentMenu = () => {
 
   return (
     <>
-      <ul className="navbar-nav mr-auto">
+      <Scrollspy className="navbar-nav mr-auto" items={content.map((item) => item.path)} currentClassName="active" offset={56}>
         {
           content.map((section) => {
             const { path, text } = section;
@@ -27,7 +28,7 @@ export const ContentMenu = () => {
             );
           })
         }
-      </ul>
+      </Scrollspy>
     </>
   );
 };

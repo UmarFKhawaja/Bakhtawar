@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler } from 'reactstrap';
 import styled from 'styled-components';
 import { AccountMenu } from './components/AccountMenu';
@@ -20,6 +20,10 @@ const NavbarLogo = styled.img.attrs(() => ({
 `;
 
 export const NavMenu = () => {
+  const location = useLocation();
+  
+  const isHomeRoute = location.pathname === '/';
+  
   const [isCollapsed, setIsCollapsed] = useState(true);
 
   const toggleNavbar = () => {
@@ -35,7 +39,11 @@ export const NavMenu = () => {
         </NavbarBrand>
         <NavbarToggler onClick={toggleNavbar} className="mr-2"/>
         <Collapse isOpen={!isCollapsed} navbar>
-          <ContentMenu/>
+          {
+            isHomeRoute
+            &&
+            <ContentMenu/>
+          }
           <AccountMenu/>
         </Collapse>
       </Container>
