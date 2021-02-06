@@ -33,7 +33,7 @@ export const NavMenu = () => {
   return (
     <Navbar className="bg-dark" expand="lg" dark fixed="top" id="main-nav">
       <Container>
-        <NavbarBrand tag={Link} to="#app">
+        <NavbarBrand tag={Link} to="#app" onClick={(e) => e.preventDefault()}>
           <NavbarLogo/>
           Bakhtawar
         </NavbarBrand>
